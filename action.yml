@@ -30,6 +30,12 @@ runs:
           else
             _target_arch=aarch64-apple-darwin
           fi
+        elif [ "${{ runner.os }}" == "Linux" ]; then
+          if [ "${{ runner.arch }}" == "X64" ]; then
+            _target_arch=x86_64-unknown-linux-gnu
+          else
+            _target_arch=aarch64-unknown-linux-gnu
+          fi
         else
           _target_arch=x86_64-unknown-linux-gnu
         fi
